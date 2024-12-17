@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@/app/ThemeProvider'
+import { Header } from '@/app/components/Header'
+import { Footer } from '@/app/components/Footer'
+import { Flex } from '@chakra-ui/react'
 
 export const metadata: Metadata = {
   title: 'Broccoli & Co.',
@@ -14,7 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Flex direction={'column'} minH={'100vh'}>
+            <Header />
+            {children}
+            <Footer />
+          </Flex>
+        </ThemeProvider>
       </body>
     </html>
   )

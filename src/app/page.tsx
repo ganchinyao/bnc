@@ -1,9 +1,10 @@
-import { Box, Text } from '@chakra-ui/react'
+import { HomePageComponent } from '@/app/components/home/HomePageComponent'
+import { ResponsiveLayout } from './components/ResponsiveLayout'
 
 export default function Home() {
   return (
-    <Box>
-      <Text>Home</Text>
-    </Box>
+    <ResponsiveLayout flex={1}>
+      <HomePageComponent />
+    </ResponsiveLayout>
   )
 }
