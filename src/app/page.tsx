@@ -1,7 +1,9 @@
+import { Box, Text } from '@chakra-ui/react'
+
 export default function Home() {
   return (
-    <div>
-      <p>Home</p>
-    </div>
-  );
+    <Box>
+      <Text>Home</Text>
+    </Box>
+  )
 }
