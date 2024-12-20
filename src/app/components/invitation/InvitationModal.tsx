@@ -6,7 +6,6 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  useToast,
   Box,
   Image,
   Text,
@@ -15,43 +14,45 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { FormFields, invitationSchema } from '@/app/components/invitation/types'
 import { FormInput } from './FormInput'
+import { requestInvitation } from '@/app/api/invite'
+import { useState } from 'react'
 
 type InvitationModalProps = {
   isOpen: boolean
   onClose: () => void
+  onSuccess: () => void
 }
 
-export const InvitationModal = ({ isOpen, onClose }: InvitationModalProps) => {
-  const toast = useToast()
+export const InvitationModal = ({
+  isOpen,
+  onClose,
+  onSuccess,
+}: InvitationModalProps) => {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const formMethods = useForm<FormFields>({
     resolver: zodResolver(invitationSchema),
   })
   const {
     handleSubmit,
     formState: { isSubmitting },
+    reset,
   } = formMethods
 
-  const onSubmit = async (data: FormFields) => {
-    try {
-      console.log('Sending request:', data)
-      toast({
-        title: 'Success!',
-        description: "We'll inform you once we are live!",
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-      })
-      onClose()
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'There was an error sending your request.',
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      })
-      console.error('Error sending request:', error)
+  const onSubmit = async ({ fullName, email }: FormFields) => {
+    // Clear the previous error message
+    setErrorMessage(null)
+
+    const { error } = await requestInvitation({
+      fullName,
+      email,
+    })
+    if (error) {
+      return setErrorMessage(error)
     }
+
+    reset()
+    onClose()
+    onSuccess()
   }
 
   return (
@@ -89,11 +90,17 @@ export const InvitationModal = ({ isOpen, onClose }: InvitationModalProps) => {
                 mt={4}
                 colorScheme={'brand.primary'}
                 isLoading={isSubmitting}
+                loadingText={'Sending...'}
                 type={'submit'}
                 size={'lg'}
               >
                 Send
               </Button>
+              {errorMessage && (
+                <Text color="red.500" mt={4} textAlign="center">
+                  {errorMessage}
+                </Text>
+              )}
             </form>
           </FormProvider>
         </ModalBody>
