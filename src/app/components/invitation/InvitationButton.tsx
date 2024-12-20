@@ -1,14 +1,16 @@
 'use client'
-import { Button } from '@chakra-ui/react'
+import { Button, useDisclosure } from '@chakra-ui/react'
+import { InvitationModal } from '@/app/components/invitation/InvitationModal'
 
 export const InvitationButton = () => {
+  const { isOpen, onClose, onToggle } = useDisclosure()
+
   return (
-    <Button
-      onClick={() => {
-        //TODO: Implement the invitation request
-      }}
-    >
-      Request an invitation
-    </Button>
+    <>
+      <Button colorScheme={'brand.primary'} onClick={onToggle} size={'lg'}>
+        Request an invitation
+      </Button>
+      <InvitationModal isOpen={isOpen} onClose={onClose} />
+    </>
   )
 }
