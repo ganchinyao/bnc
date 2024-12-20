@@ -13,7 +13,7 @@ export const Header = () => {
       w={'full'}
       zIndex={'banner'}
     >
-      <Text fontSize={'2xl'} fontWeight={'bold'} color={'green.500'}>
+      <Text fontSize={'2xl'} fontWeight={'bold'} color={'brand.primary.500'}>
         Broccoli & Co.
       </Text>
     </Flex>

@@ -1,10 +1,5 @@
-import { HomePageComponent } from '@/app/components/home/HomePageComponent'
-import { ResponsiveLayout } from './components/ResponsiveLayout'
+import { HomePageComponent } from '@/app/components/HomePageComponent'
 
 export default function Home() {
-  return (
-    <ResponsiveLayout flex={1}>
-      <HomePageComponent />
-    </ResponsiveLayout>
-  )
+  return <HomePageComponent />
 }
