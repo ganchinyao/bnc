@@ -14,6 +14,7 @@ export const HomePageComponent = () => {
       textAlign={'center'}
       w={'100%'}
       flex={1}
+      py={'20px'}
     >
       <Image
         src={'/assets/homepage-img1.png'}
@@ -22,9 +23,10 @@ export const HomePageComponent = () => {
         height={150}
       />
       <Text
-        fontSize={{ base: '4xl', md: '5xl' }}
+        fontSize={{ base: '3xl', md: '4xl' }}
         fontWeight={'bold'}
         color={'brand.primary.500'}
+        lineHeight={'shorter'}
       >
         A better way
         <br />
