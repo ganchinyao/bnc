@@ -9,7 +9,7 @@ export const Footer = () => {
       alignItems={'center'}
       justifyContent={'center'}
     >
-      <VStack gap={4} align={'center'} w={'100%'}>
+      <VStack gap={4} align={'center'} w={'100%'} textAlign={'center'}>
         <Text fontSize={{ base: 'sm', md: 'md' }} fontWeight={'semibold'}>
           Be the first to know - Request your invitation today!
         </Text>
