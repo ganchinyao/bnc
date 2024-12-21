@@ -57,7 +57,14 @@ export const InvitationModal = ({
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered>
+    <Modal
+      isOpen={isOpen}
+      onClose={() => {
+        reset()
+        onClose()
+      }}
+      isCentered
+    >
       <ModalOverlay />
       <ModalContent borderBottomRadius={'4px'}>
         <ModalCloseButton />
