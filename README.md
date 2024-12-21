@@ -10,6 +10,8 @@ Broccoli & Co. is an upcoming online service company. It is accepting invitation
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Note: Please use at least node version 20.
+
 ## Deployment
 
 To deploy, simply merge your code and push to `main`. Vercel will then trigger a build.
