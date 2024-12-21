@@ -4,6 +4,9 @@ import { ServerActionResponse } from '@/app/api/types'
 
 /**
  * Request an invitation to join the platform.
+ * The external API will perform the full logic to validate and authorize invitations.
+ * On success, the function will return void.
+ *
  * @param fullName: The full name of the user.
  * @param email: The email of the user.
  *

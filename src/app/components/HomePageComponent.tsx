@@ -6,10 +6,12 @@ import Image from 'next/image'
 export const HomePageComponent = () => {
   return (
     <VStack
-      bgGradient="linear(to-b, brand.primary.50, brand.primary.100, brand.primary.200)"
+      bgGradient={
+        'linear(to-b, brand.primary.50, brand.primary.100, brand.primary.200)'
+      }
       spacing={6}
-      justifyContent="center"
-      textAlign="center"
+      justifyContent={'center'}
+      textAlign={'center'}
       w={'100%'}
       flex={1}
     >
@@ -21,8 +23,8 @@ export const HomePageComponent = () => {
       />
       <Text
         fontSize={{ base: '4xl', md: '5xl' }}
-        fontWeight="bold"
-        color="brand.primary.500"
+        fontWeight={'bold'}
+        color={'brand.primary.500'}
       >
         A better way
         <br />

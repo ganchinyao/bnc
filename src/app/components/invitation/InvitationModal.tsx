@@ -6,9 +6,9 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  Box,
   Image,
   Text,
+  Flex,
 } from '@chakra-ui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
@@ -50,6 +50,7 @@ export const InvitationModal = ({
       return setErrorMessage(error)
     }
 
+    // Reset the form, close the invitation modal, and execute the success callback
     reset()
     onClose()
     onSuccess()
@@ -60,16 +61,16 @@ export const InvitationModal = ({
       <ModalOverlay />
       <ModalContent borderBottomRadius={'4px'}>
         <ModalCloseButton />
-        <Box
+        <Flex
+          alignItems={'center'}
+          justifyContent={'center'}
           borderTopRadius={'4px'}
           h={'120px'}
           bgGradient={'linear(to-r, brand.primary.300, brand.primary.400)'}
-          justifyItems={'center'}
-          alignContent={'center'}
         >
           <Image w={'60px'} src={'/assets/mail.png'} alt="Invitation" />
-        </Box>
-        <ModalHeader textAlign="center" color="brand.primary.500">
+        </Flex>
+        <ModalHeader textAlign={'center'} color={'brand.primary.500'}>
           <Text fontSize={'x-large'}>Request an invite</Text>
           <Text fontSize={'medium'} fontWeight={'normal'}>
             {"We'll inform you once we are live!"}
@@ -97,7 +98,7 @@ export const InvitationModal = ({
                 Send
               </Button>
               {errorMessage && (
-                <Text color="red.500" mt={4} textAlign="center">
+                <Text color={'red.500'} mt={4} textAlign={'center'}>
                   {errorMessage}
                 </Text>
               )}

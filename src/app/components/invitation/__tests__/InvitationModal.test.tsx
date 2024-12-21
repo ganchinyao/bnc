@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { beforeEach, describe, expect, it, Mock, vi } from 'vitest'
 import { InvitationModal } from '@/app/components/invitation/InvitationModal'
-import { ThemeProvider } from '@/app/ThemeProvider'
+import { ThemeProvider } from '@/app/theme/ThemeProvider'
 import { requestInvitation } from '@/app/api/invite'
 
 vi.mock('@/app/api/invite', () => ({

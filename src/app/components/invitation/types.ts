@@ -6,6 +6,13 @@ export type FormFields = {
   confirmEmail: string
 }
 
+/**
+ * Schema for the invitation form
+ *
+ * - fullName: Must be at least 3 characters
+ * - email: Must be a valid email address
+ * - confirmEmail: Must match the email field
+ */
 export const invitationSchema = z
   .object({
     fullName: z.string().min(3, 'Please enter at least 3 characters'),
