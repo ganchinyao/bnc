@@ -5,7 +5,7 @@ export const Footer = () => {
     <Flex
       bgColor={'blackAlpha.900'}
       color={'whiteAlpha.900'}
-      p={{ base: '24px', md: '32px' }}
+      p={'24px'}
       alignItems={'center'}
       justifyContent={'center'}
     >

@@ -5,7 +5,7 @@ export const Header = () => {
     <Flex
       as="header"
       bgColor={'white'}
-      h={'80px'}
+      h={'64px'}
       px={{ base: '24px', md: '80px' }}
       alignItems={'center'}
       justifyContent={'space-between'}

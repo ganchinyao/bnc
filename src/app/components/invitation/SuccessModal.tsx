@@ -1,6 +1,6 @@
 import {
-  Box,
   Button,
+  Flex,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -23,14 +23,19 @@ export const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
       <ModalOverlay />
       <ModalContent py={'20px'}>
         <ModalHeader textAlign="center">
-          <Box justifyItems={'center'} mt={'8px'}>
+          <Flex
+            alignItems={'center'}
+            justifyContent={'center'}
+            borderTopRadius={'4px'}
+            mt={'8px'}
+          >
             <Image
               src="/assets/checked.png"
               alt="Success"
               width={64}
               height={64}
             />
-          </Box>
+          </Flex>
           <Text mt={'16px'}>All done! Hooray!</Text>
         </ModalHeader>
         <ModalCloseButton />

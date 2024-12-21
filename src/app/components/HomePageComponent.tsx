@@ -18,8 +18,8 @@ export const HomePageComponent = () => {
       <Image
         src={'/assets/homepage-img1.png'}
         alt={'Hero image'}
-        width={200}
-        height={200}
+        width={150}
+        height={150}
       />
       <Text
         fontSize={{ base: '4xl', md: '5xl' }}
