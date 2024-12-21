@@ -13,7 +13,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { FormFields, invitationSchema } from '@/app/components/invitation/types'
-import { FormInput } from './FormInput'
+import { FormInput } from '@/app/components/invitation/FormInput'
 import { requestInvitation } from '@/app/api/invite'
 import { useState } from 'react'
 
@@ -63,7 +63,7 @@ export const InvitationModal = ({
         <Box
           borderTopRadius={'4px'}
           h={'120px'}
-          bgGradient="linear(to-r, brand.primary.300, brand.primary.400)"
+          bgGradient={'linear(to-r, brand.primary.300, brand.primary.400)'}
           justifyItems={'center'}
           alignContent={'center'}
         >
