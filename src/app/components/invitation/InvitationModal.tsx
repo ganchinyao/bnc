@@ -68,11 +68,12 @@ export const InvitationModal = ({
         resetForm()
         onClose()
       }}
+      closeOnOverlayClick={!isSubmitting}
       isCentered
     >
       <ModalOverlay />
       <ModalContent borderBottomRadius={'4px'}>
-        <ModalCloseButton />
+        <ModalCloseButton isDisabled={isSubmitting} />
         <Flex
           alignItems={'center'}
           justifyContent={'center'}
