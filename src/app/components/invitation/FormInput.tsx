@@ -17,7 +17,7 @@ type FormInputProps = {
 export const FormInput = ({ label, name, ...inputProps }: FormInputProps) => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     watch,
   } = useFormContext<FormFields>()
 
@@ -53,6 +53,7 @@ export const FormInput = ({ label, name, ...inputProps }: FormInputProps) => {
         zIndex={1}
         size={'lg'}
         fontSize={'md'}
+        tabIndex={isSubmitting ? -1 : undefined}
         _hover={{
           borderColor: 'brand.primary.500',
           borderWidth: 2,

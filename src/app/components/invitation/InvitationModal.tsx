@@ -38,6 +38,11 @@ export const InvitationModal = ({
     reset,
   } = formMethods
 
+  const resetForm = () => {
+    reset()
+    setErrorMessage(null)
+  }
+
   const onSubmit = async ({ fullName, email }: FormFields) => {
     // Clear the previous error message
     setErrorMessage(null)
@@ -51,7 +56,7 @@ export const InvitationModal = ({
     }
 
     // Reset the form, close the invitation modal, and execute the success callback
-    reset()
+    resetForm()
     onClose()
     onSuccess()
   }
@@ -60,7 +65,7 @@ export const InvitationModal = ({
     <Modal
       isOpen={isOpen}
       onClose={() => {
-        reset()
+        resetForm()
         onClose()
       }}
       isCentered
